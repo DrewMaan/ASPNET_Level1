@@ -12,6 +12,8 @@ if(app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-//app.MapControllerRoute();
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
