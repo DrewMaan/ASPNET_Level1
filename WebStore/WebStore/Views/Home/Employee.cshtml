@@ -1,0 +1,27 @@
+﻿@model WebStore.Models.Employee
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <h3>Сотруник: @Model.LastName @Model.FirstName @Model.Patronymic</h3>
+
+    <p>Возраст: @Model.Age</p>
+    <p>Департамент: @Model.Department</p>
+    <p>Должность: @Model.Position</p>
+    <p>Начало работы: @Model.StartDate.ToString()</p>
+    @if(Model.EndDate == default(DateTime))
+    {
+        <p>Конец работы: -</p>
+    }
+    else
+    {
+        <p>Конец работы: @Model.EndDate.ToString()</p>
+    }
+
+    <a href="~/home/employees/">К списку сотрудников</a>
+</body>
+</html>
